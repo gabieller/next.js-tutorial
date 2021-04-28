@@ -1,34 +1,21 @@
-import React, { useEffect } from "react"
-import Head from "next/head"
-import Link from "next/link"
-import Date from "../components/date"
+import Head from "next/head";
+import Link from "next/link";
+import Date from "../components/date";
 
-import Layout, { siteTitle } from "../components/layout"
-import utilStyles from "../styles/utils.module.css"
-import { getSortedPostsData } from "../lib/posts"
+import Layout, { siteTitle } from "../components/layout";
+import utilStyles from "../styles/utils.module.css";
+import { getSortedPostsData } from "../lib/posts";
 
 export async function getStaticProps() {
-  const allPostsData = getSortedPostsData()
+  const allPostsData = getSortedPostsData();
   return {
     props: {
       allPostsData,
     },
-  }
+  };
 }
 
 export default function Home({ allPostsData }) {
-  useEffect(() => {
-    if (window.netlifyIdentity) {
-      window.netlifyIdentity.on("init", (user) => {
-        if (!user) {
-          window.netlifyIdentity.on("login", () => {
-            document.location.href = "/admin/"
-          })
-        }
-      })
-    }
-  }, [])
-
   return (
     <Layout home>
       <Head>
@@ -59,5 +46,5 @@ export default function Home({ allPostsData }) {
         </ul>
       </section>
     </Layout>
-  )
+  );
 }
