@@ -1,16 +1,17 @@
-import Head from "next/head";
-import styles from "./layout.module.css";
-import utilStyles from "../styles/utils.module.css";
-import Link from "next/link";
+import Head from "next/head"
+import styles from "./layout.module.css"
+import utilStyles from "../styles/utils.module.css"
+import Link from "next/link"
 
-const name = "Gabriela Eller";
-export const siteTitle = "Next.js Sample Website";
+const name = "Gabriela Eller"
+export const siteTitle = "Next.js Sample Website"
 
 export default function Layout({ children, home }) {
   return (
     <div className={styles.container}>
       <Head>
         <link rel="icon" href="/favicon.ico" />
+        <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
         <meta
           name="description"
           content="Learn how to build a personal website using Next.js"
@@ -62,5 +63,5 @@ export default function Layout({ children, home }) {
         </div>
       )}
     </div>
-  );
+  )
 }
