@@ -11,7 +11,7 @@ export default function Layout({ children, home }) {
     <div className={styles.container}>
       <Head>
         <link rel="icon" href="/favicon.ico" />
-        <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+        {/* <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script> */}
         <meta
           name="description"
           content="Learn how to build a personal website using Next.js"
